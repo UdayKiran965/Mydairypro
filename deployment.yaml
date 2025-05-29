@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydiarypro-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mydiarypro
+  template:
+    metadata:
+      labels:
+        app: mydiarypro
+    spec:
+      containers:
+      - name: mydairypro-container
+        image: udaykiran965/mydiarypro:latest
+        ports:
+        - containerPort: 8080
